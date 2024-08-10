@@ -1,0 +1,4 @@
+spring.application.name: newrelic-sample
+
+management.server.port: 8081
+server.tomcat.mbeanregistry.enabled: true

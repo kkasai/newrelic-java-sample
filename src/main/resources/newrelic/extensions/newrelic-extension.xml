@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension xmlns="https://newrelic.com/docs/java/xsd/v1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="newrelic-extension extension.xsd" name="newrelic-extension" version="1.0" enabled="true">
+  <instrumentation>
+    <!--  Actuatorのヘルスチェックエンドポイントを無視する  -->
+    <pointcut ignoreTransaction="true">
+      <className>org.springframework.boot.actuate.endpoint.web.servlet.AbstractWebMvcEndpointHandlerMapping$OperationHandler</className>
+      <method>
+        <name>handle</name>
+      </method>
+    </pointcut>
+  </instrumentation>
+</extension>
